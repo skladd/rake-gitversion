@@ -1,4 +1,4 @@
-require "rake/gitversion/version"
+require 'rake/gitversion/version'
 
 module Rake
   module Gitversion
