@@ -1,8 +1,11 @@
 # Rake::Gitversion
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rake/gitversion`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem adds a task 'set_version' to rake, which uses annotated tags and the
+'git describe' command to get a version string and save it to a VERSION file.
+The patch number of the version string is the number of commits since the last
+version tag.
+If the git tree is dirty, minor is increased and the version marked as
+prerelease by adding '.dev'.
 
 ## Installation
 
@@ -22,20 +25,49 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In your Rakefile:
+
+```ruby
+require 'rake/gitversion'
+```
+
+Add an annotated version tag: 
+
+```git tag -a -m 'minor' v0.1```
+
+Run rake set_version
+
+
+In your version.rb, use:
+
+```ruby
+# Version of gem and module
+VERSION = begin
+  File.read('VERSION')
+rescue
+  '0.pre'
+end.freeze
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bundle install` to install dependencies.
+Then, run `rake test` to run the tests.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`.
+To release a new version, update the version number in `version.rb`, and then
+run `bundle exec rake release`, which will create a git tag for the version,
+push git commits and tags, and push the `.gem` file to
+[rubygems.org](https://rubygems.org).
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rake-gitversion.
+Bug reports and pull requests are welcome on GitHub at
+https://github.com/skladd/rake-gitversion.
 
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the
+[MIT License](http://opensource.org/licenses/MIT).
 
