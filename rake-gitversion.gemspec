@@ -9,8 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Stephan Klatt']
   spec.email         = ['stephan.klatt@gmail.com']
 
-  spec.summary       = 'TODO: Write a short summary, because Rubygems requires one.'
-  spec.description   = 'TODO: Write a longer description or delete this line.'
+  spec.summary       = 'Get version from git and write it to file'
+  spec.description   = 'Get version from git tags and commits since then and'
+                       ' write it to VERSION file'
   spec.homepage      = 'TODO: Put your gem\'s website or public repo URL here.'
   spec.license       = 'MIT'
 
@@ -31,4 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'minitest', '~> 5.9'
   spec.add_development_dependency 'minitest-reporters', '~> 1.1'
+  spec.add_development_dependency 'mocha', '~> 1.1'
 end
