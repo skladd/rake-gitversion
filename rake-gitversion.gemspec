@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Get version from git and write it to file'
   spec.description   = 'Get version from git tags and commits since then and'
                        ' write it to VERSION file'
-  spec.homepage      = 'TODO: Put your gem\'s website or public repo URL here.'
+  spec.homepage      = 'https://github.com/skladd/rake-gitversion'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
