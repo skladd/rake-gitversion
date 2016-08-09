@@ -1,5 +1,8 @@
 # Rake::Gitversion
 
+[![Gem Version](https://badge.fury.io/rb/rake-gitversion.svg)](https://badge.fury.io/rb/rake-gitversion)
+[![Build Status](https://travis-ci.org/skladd/rake-gitversion.svg?branch=master)](https://travis-ci.org/skladd/rake-gitversion)
+
 This gem adds a task 'set_version' to rake, which uses annotated tags and the
 'git describe' command to get a version string and save it to a VERSION file.
 The patch number of the version string is the number of commits since the last
@@ -35,7 +38,11 @@ Add an annotated version tag:
 
 ```git tag -a -m 'minor' v0.1```
 
-Run rake set_version
+Run ```rake set_version```.
+
+Consider adding ```VERSION``` to your .gitignore file, but make sure to run
+to ```rake set_version``` after checkout or distribute ```VERSION``` file
+somehow.
 
 
 In your version.rb, use:
