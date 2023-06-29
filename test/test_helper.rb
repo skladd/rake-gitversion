@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'mocha/mini_test'
+require 'mocha/minitest'
 
 # Fake Rakefile methods
 module Rake
