@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['stephan.klatt@gmail.com']
 
   spec.summary       = 'Get version from git and write it to file'
-  spec.description   = 'Get version from git tags and commits since then and'
+  spec.description   = 'Get version from git tags and commits since then and' +
                        ' write it to VERSION file'
   spec.homepage      = 'https://github.com/skladd/rake-gitversion'
   spec.license       = 'MIT'
